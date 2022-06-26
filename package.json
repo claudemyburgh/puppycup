@@ -9,9 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^0.0.0-insiders.6253aa5",
+    "@heroicons/react": "^1.0.6",
+    "@sanity/client": "^3.3.2",
+    "@sanity/image-url": "^1.0.1",
+    "@tailwindcss/forms": "^0.5.2",
+    "autoprefixer": "^10.4.7",
+    "groq": "^2.29.3",
     "next": "12.1.6",
+    "next-sanity": "^0.5.2",
+    "nextjs-progressbar": "^0.0.14",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.11",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-portable-text": "^0.4.3",
+    "tailwindcss": "^3.1.4"
   },
   "devDependencies": {
     "eslint": "8.18.0",
