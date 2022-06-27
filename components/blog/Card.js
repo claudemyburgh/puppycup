@@ -2,16 +2,20 @@ import React from 'react'
 import Link from 'next/link'
 import { urlFor } from '../../libs/sanity'
 import Avatar from '../parts/Avatar'
+import { config } from '../../libs/config'
+import Image from 'next/image'
+import { useNextSanityImage } from 'next-sanity-image'
 
 const Card = ({ post }) => {
+  const imageProps = useNextSanityImage(config, post.mainImage)
   return (
     <>
       <div className="overflow-hidden rounded-md border border-primary-100 bg-white shadow shadow-primary/10">
-        <img className="w-full object-cover object-center md:h-36 lg:h-48" src={urlFor(post.mainImage)} alt={post.title} />
+        <div className="relative min-h-[270px] border-b border-gray-200 bg-primary">
+          <Image {...imageProps} layout={'fill'} />
+        </div>
         <div className="relative p-5">
-          <div className="mb-2.5 flex">
-            <Avatar username={post.username} avatar={post.avatar} />
-          </div>
+          <div className="mb-2.5 flex">{<Avatar username={post.username} avatar={post.avatar} />}</div>
           <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-500">CATEGORY</h2>
           <h1 className="mb-3 text-lg font-medium text-gray-900">The Catalyzer</h1>
           <time className="bold mb-1 text-xs italic tracking-widest text-primary-400">
